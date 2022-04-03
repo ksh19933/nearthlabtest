@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { createGlobalStyle } from "styled-components";
+import { Router } from "./routes/Router";
+
+
+const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+  div, span, input{
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+  }  
+  body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 1;
+      padding 20px;
+      overflow-x: auto;
+      overflow-y: auto;
+    }
+`
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Router />
+    </>
   );
 }
 
